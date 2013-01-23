@@ -3,7 +3,7 @@
 
 .tabbrowser-strip {height: 32px !important; text-shadow:0px 1px rgba(255,255,255,0.3); }
 
-.tabbrowser-tab{opacity:0.5; margin:-0px 1.5px !important; color:rgba(0,0,0,0.95) !important;/*font-weight:bold;*/; font-size:12px;}
+.tabbrowser-tab{opacity:0.5; margin:-0px 1.5px !important; color:rgba(0,0,0,0.95) !important; font-size:12px;}
 
 .tabbrowser-tab[selected="true"]{opacity:.2}
 
