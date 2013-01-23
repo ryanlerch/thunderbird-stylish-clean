@@ -1,0 +1,36 @@
+@-moz-document url(chrome://conversations/content/stub.xhtml)
+{
+body
+{
+font-family: droid-sans!important;
+background-color:#aaa!important;
+font-size:12px!important;
+}
+
+.message
+{
+box-shadow:none!important;
+}
+
+.message.collapsed
+{
+margin-bottom: 12px!important;
+border-radius:0px!important;
+border:1px solid #ff00ff!important;
+box-shadow:none;
+}
+
+.message
+{
+margin-left:auto!important;
+margin-right:auto!important;
+max-width:800px!important;
+}
+.message.collapsed .snippet {
+display:block!important;
+}
+pre
+{
+display:none;
+}
+}
