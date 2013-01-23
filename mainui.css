@@ -1,460 +1,971 @@
-@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+@namespace url(http: //www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 
+.tabbrowser-strip {
+  height: 32px !important;
+  text-shadow: 0px 1px rgba(255,255,255,0.3);
+}
 
-.tabbrowser-strip {height: 32px !important; text-shadow:0px 1px rgba(255,255,255,0.3); }
+.tabbrowser-tab {
+  opacity: 0.5;
+  margin: -0px 1.5px !important;
+  color: rgba(0,0,0,0.95) !important;
+  font-size: 12px;
+}
 
-.tabbrowser-tab{opacity:0.5; margin:-0px 1.5px !important; color:rgba(0,0,0,0.95) !important; font-size:12px;}
+.tabbrowser-tab[selected="true"] {
+  opacity: .2
+}
 
-.tabbrowser-tab[selected="true"]{opacity:.2}
+#menubar-items {
+  text-shadow: 0px 1px rgba(255,255,255,0.3) !important ;
+  color: #ccc !important;
+}
 
+tabbar,.tabbrowser-strip {
+  display: none !important
+}
 
-
-#menubar-items {text-shadow:0px 1px rgba(255,255,255,0.3) !important ; color: #ccc !important;}
-
-
-
-
-
-tabbar,.tabbrowser-strip{display: none !important}
-
-tabs{box-shadow:  inset -10px 10px 5px #eee , inset 0 -1px  #aaa , inset 0 -4px 3px -2px  #ccc !important}
-
-
-
-
-
-
-
+tabs {
+  box-shadow: inset -10px 10px 5px #eee , inset 0 -1px  #aaa , inset 0 -4px 3px -2px  #ccc !important
+}
 
 /*
-menu{color: #aaa !important}
+menu {
+  color: #aaa !important
+}
 
-menu:hover, menu:focus{color: #000 !important}
+menu:hover, menu:focus {
+  color: #000 !important
+}
+
 */
 
-
-
-
-
-
-
-
-
-
-*{outline: 0 !important; -moz-transition: all .2s ease; -moz-box-sizing: border-box;}
-
-
-
-
+* {
+  outline: 0 !important;
+  -moz-transition: all .2s ease;
+  -moz-box-sizing: border-box;
+}
 
 tree,
-
 treecell,
-
 treechildren,
-
 treecol,
-
 treecols,
-
 treeitem,
-
 treerow,
+treeseparator {
+  border-style: none !important;
+  box-shadow: none !important;
+  background-image: none !important;
+  background-color: #fafafa !important;
+  color: #444;
+}
 
-treeseparator
-
-{border-style: none !important; box-shadow: none !important; background-image: none !important; background-color: #fafafa !important; color: #444; }
-
-
-
-
-
-treechildren::-moz-tree-row  {padding:  0em !important; height:3em !important;outline: 0 !important}
-
+treechildren::-moz-tree-row {
+  padding: 0em !important;
+  height: 3em !important;
+  outline: 0 !important
+}
 
 tabpanel,
-
-tabbox{background-color: #f5f5f5 !important}
-
-
-
-
+tabbox {
+  background-color: #f5f5f5 !important
+}
 
 @media (max-width: 1224px) {
-
- treechildren::-moz-tree-row {
-
-    padding:0em !important; height:2em !important;;
-
+  treechildren::-moz-tree-row {
+    padding: 0em !important;
+    height: 2em !important;
   }
-
 }
-
-
-
-
-
-
-
-
 
 @media (max-height: 824px) {
-
- treechildren::-moz-tree-row {
-
-    padding:0em !important; height:1.75em !important;;
-
+  treechildren::-moz-tree-row {
+    padding: 0em !important;
+    height: 1.75em !important;
   }
-
 }
 
+#threadTree  treechildren: :-moz-tree-row(even),
+#threadTree treechildren::-moz-tree-row(odd) {
+  background-color: transparent !important;
+  background-image: -moz-linear-gradient(center bottom, rgba(0,0,0,0.015) 20%,rgba(0,0,0,0.0) 100%) 
+}
 
-
-#threadTree  treechildren::-moz-tree-row(even),
-
-#threadTree treechildren::-moz-tree-row(odd) {background-color: transparent !important;
-
-
-
-background-image: -moz-linear-gradient(center bottom, rgba(0,0,0,0.015) 20%,rgba(0,0,0,0.0) 100%) 
-
- }
-
-
-
-#threadTree treechildren::-moz-tree-row(selected), 
-
+#threadTree treechildren: :-moz-tree-row(selected), 
 treechildren::-moz-tree-row(selected) {
-
-background-color: #69c !important;
-
-
-
-background-image: -moz-linear-gradient(center bottom, rgba(0,0,0,0.15) 20%,rgba(0,0,0,0.0) 100%);
-
+  background-color: #69c !important;
+  background-image: -moz-linear-gradient(center bottom, rgba(0,0,0,0.15) 20%,rgba(0,0,0,0.0) 100%);
 }
 
-
-
-
-
-
-
-
-
-.tabbrowser-strip{margin-top: -2px !important;
-
- }
-
-
-
-
-
-
-
-treechildren::-moz-tree-row(selected), treechildren::-moz-tree-row(current, focus), 
-
-treechildren::-moz-tree-row(selected, focus), treechildren::-moz-tree-row(selected, current, focus) { 
-
-border: none !important;
-
+.tabbrowser-strip {
+  margin-top: -2px !important;
 }
 
+treechildren: :-moz-tree-row(selected),
+treechildren: :-moz-tree-row(current, focus),
+treechildren: :-moz-tree-row(selected, focus),
+treechildren::-moz-tree-row(selected, current, focus) {
+  border: none !important;
+}
+
+treechildren::-moz-tree-cell(lc-FFFFFF,tagsCol) {
+  background-color: #FFCCCC !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFFFFF) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFFFFF, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-FFCCCC,tagsCol) {
+  background-color: #FFE6E6 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFCCCC) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFCCCC, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-FFCC99,tagsCol) {
+  background-color: #FFE6CC !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFCC99) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFCC99, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-FFFF99,tagsCol) {
+  background-color: #FFFFCC !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFFF99) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFFF99, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-FFFFCC,tagsCol) {
+  background-color: #FFFFE6 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFFFCC) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFFFCC, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-99FF99,tagsCol) {
+  background-color: #CCFFCC !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-99FF99) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-99FF99, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-99FFFF,tagsCol) {
+  background-color: #CCFFFF !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-99FFFF) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-99FFFF, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-CCFFFF,tagsCol) {
+  background-color: #E6FFFF !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-CCFFFF) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-CCFFFF, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-CCCCFF,tagsCol) {
+  background-color: #E6E6FF !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-CCCCFF) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-CCCCFF, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-FFCCFF,tagsCol) {
+  background-color: #FFE6FF !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFCCFF) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFCCFF, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-C6C6C6,tagsCol) {
+  background-color: #E6E6E6 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-C6C6C6) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-C6C6C6, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-FF6666,tagsCol) {
+  background-color: #FFB3B3 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FF6666) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FF6666, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-FF9966,tagsCol) {
+  background-color: #FFCCB3 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FF9966) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FF9966, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-FFFF66,tagsCol) {
+  background-color: #FFFFB3 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFFF66) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFFF66, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-FFFF33,tagsCol) {
+  background-color: #FFFF99 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFFF33) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFFF33, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-66FF99,tagsCol) {
+  background-color: #B3FFCC !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-66FF99) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-66FF99, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-33FFFF,tagsCol) {
+  background-color: #99FFFF !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-33FFFF) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-33FFFF, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-66FFFF,tagsCol) {
+  background-color: #B3FFFF !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-66FFFF) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-66FFFF, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-9999FF,tagsCol) {
+  background-color: #CCCCFF !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-9999FF) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-9999FF, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-FF99FF,tagsCol) {
+  background-color: #FFCCFF !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FF99FF) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FF99FF, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-BBBBBB,tagsCol) {
+  background-color: #E0E0E0 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-BBBBBB) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-BBBBBB, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-FF0000,tagsCol) {
+  background-color: #FF8080 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FF0000) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FF0000, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-FF9900,tagsCol) {
+  background-color: #FFCC80 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FF9900) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FF9900, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-FFCC66,tagsCol) {
+  background-color: #FFE6B3 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFCC66) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFCC66, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-FFFF00,tagsCol) {
+  background-color: #FFFF80 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFFF00) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFFF00, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-33FF33,tagsCol) {
+  background-color: #99FF99 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-33FF33) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-33FF33, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-66CCCC,tagsCol) {
+  background-color: #B3E6E6 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-66CCCC) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-66CCCC, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-33CCFF,tagsCol) {
+  background-color: #99E6FF !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-33CCFF) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-33CCFF, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-6666CC,tagsCol) {
+  background-color: #B3B3E6 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-6666CC) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-6666CC, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-CC66CC,tagsCol) {
+  background-color: #E6B3E6 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-CC66CC) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-CC66CC, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-999999,tagsCol) {
+  background-color: #CCCCCC !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-999999) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-999999, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-CC0000,tagsCol) {
+  background-color: #E68080 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-CC0000) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-CC0000, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-FF6600,tagsCol) {
+  background-color: #FFB380 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FF6600) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FF6600, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-FFCC33,tagsCol) {
+  background-color: #FFE699 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFCC33) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFCC33, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-FFCC00,tagsCol) {
+  background-color: #FFE680 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFCC00) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-FFCC00, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-33CC00,tagsCol) {
+  background-color: #99E680 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-33CC00) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-33CC00, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-00CCCC,tagsCol) {
+  background-color: #80E6E6 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-00CCCC) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-00CCCC, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-3366FF,tagsCol) {
+  background-color: #99B3FF !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-3366FF) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-3366FF, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-6633FF,tagsCol) {
+  background-color: #B399FF !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-6633FF) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-6633FF, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-CC33CC,tagsCol) {
+  background-color: #E699E6 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-CC33CC) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-CC33CC, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-666666,tagsCol) {
+  background-color: #B3B3B3 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-666666) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-666666, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-990000,tagsCol) {
+  background-color: #CC8080 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-990000) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-990000, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-CC6600,tagsCol) {
+  background-color: #CC8080 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-CC6600) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-CC6600, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-CC9933,tagsCol) {
+  background-color: #E6CC99 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-CC9933) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-CC9933, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-999900,tagsCol) {
+  background-color: #CCCC80 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-999900) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-999900, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-009900,tagsCol) {
+  background-color: #80CC80 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-009900) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-009900, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-339999,tagsCol) {
+  background-color: #99CCCC !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-339999) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-339999, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-3333FF,tagsCol) {
+  background-color: #9999FF !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-3333FF) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-3333FF, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-6600CC,tagsCol) {
+  background-color: #B380E6 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-6600CC) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-6600CC, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-993399,tagsCol) {
+  background-color: #CC99CC !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-993399) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-993399, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-333333,tagsCol) {
+  background-color: #999999 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-333333) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-333333, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-660000,tagsCol) {
+  background-color: #B38080 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-660000) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-660000, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-993300,tagsCol) {
+  background-color: #CC9980 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-993300) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-993300, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-996633,tagsCol) {
+  background-color: #CCB399 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-996633) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-996633, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-666600,tagsCol) {
+  background-color: #B3B380 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-666600) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-666600, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-006600,tagsCol) {
+  background-color: #80B380 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-006600) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-006600, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-336666,tagsCol) {
+  background-color: #99B3B3 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-336666) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-336666, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-000099,tagsCol) {
+  background-color: #8080CC !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-000099) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-000099, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-333399,tagsCol) {
+  background-color: #9999CC !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-333399) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-333399, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-663366,tagsCol) {
+  background-color: #B399B3 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-663366) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-663366, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-000000,tagsCol) {
+  background-color: #808080 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-000000) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-000000, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-330000,tagsCol) {
+  background-color: #998080 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-330000) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-330000, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-663300,tagsCol) {
+  background-color: #B39980 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-663300) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-663300, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-663333,tagsCol) {
+  background-color: #B39999 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-663333) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-663333, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-333300,tagsCol) {
+  background-color: #999980 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-333300) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-333300, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-003300,tagsCol) {
+  background-color: #809980 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-003300) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-003300, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-003333,tagsCol) {
+  background-color: #809999 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-003333) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-003333, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-000066,tagsCol) {
+  background-color: #8080B3 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-000066) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-000066, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-330099,tagsCol) {
+  background-color: #9980CC !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-330099) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-330099, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(lc-330033,tagsCol) {
+  background-color: #998099 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-330033) {
+  color: #000 !important;
+}
+
+treechildren::-moz-tree-cell-text(lc-330033, selected) {
+  color: #FFF !important;
+}
+
+treechildren::-moz-tree-cell(tagsCol) {
+  margin-top: 5px!important;
+  margin-bottom: 5px!important;
+  margin-left: 3px!important;
+  margin-right: 3\px!important;
+}
 
-treechildren::-moz-tree-cell(lc-FFFFFF,tagsCol) { background-color: #FFCCCC !important;} 
-treechildren::-moz-tree-cell-text(lc-FFFFFF) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-FFFFFF, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-FFCCCC,tagsCol) { background-color: #FFE6E6 !important;} 
-treechildren::-moz-tree-cell-text(lc-FFCCCC) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-FFCCCC, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-FFCC99,tagsCol) { background-color: #FFE6CC !important;} 
-treechildren::-moz-tree-cell-text(lc-FFCC99) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-FFCC99, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-FFFF99,tagsCol) { background-color: #FFFFCC !important;} 
-treechildren::-moz-tree-cell-text(lc-FFFF99) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-FFFF99, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-FFFFCC,tagsCol) { background-color: #FFFFE6 !important;} 
-treechildren::-moz-tree-cell-text(lc-FFFFCC) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-FFFFCC, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-99FF99,tagsCol) { background-color: #CCFFCC !important;} 
-treechildren::-moz-tree-cell-text(lc-99FF99) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-99FF99, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-99FFFF,tagsCol) { background-color: #CCFFFF !important;} 
-treechildren::-moz-tree-cell-text(lc-99FFFF) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-99FFFF, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-CCFFFF,tagsCol) { background-color: #E6FFFF !important;} 
-treechildren::-moz-tree-cell-text(lc-CCFFFF) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-CCFFFF, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-CCCCFF,tagsCol) { background-color: #E6E6FF !important;} 
-treechildren::-moz-tree-cell-text(lc-CCCCFF) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-CCCCFF, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-FFCCFF,tagsCol) { background-color: #FFE6FF !important;} 
-treechildren::-moz-tree-cell-text(lc-FFCCFF) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-FFCCFF, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-C6C6C6,tagsCol) { background-color: #E6E6E6 !important;} 
-treechildren::-moz-tree-cell-text(lc-C6C6C6) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-C6C6C6, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-FF6666,tagsCol) { background-color: #FFB3B3 !important;} 
-treechildren::-moz-tree-cell-text(lc-FF6666) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-FF6666, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-FF9966,tagsCol) { background-color: #FFCCB3 !important;} 
-treechildren::-moz-tree-cell-text(lc-FF9966) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-FF9966, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-FFFF66,tagsCol) { background-color: #FFFFB3 !important;} 
-treechildren::-moz-tree-cell-text(lc-FFFF66) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-FFFF66, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-FFFF33,tagsCol) { background-color: #FFFF99 !important;} 
-treechildren::-moz-tree-cell-text(lc-FFFF33) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-FFFF33, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-66FF99,tagsCol) { background-color: #B3FFCC !important;} 
-treechildren::-moz-tree-cell-text(lc-66FF99) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-66FF99, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-33FFFF,tagsCol) { background-color: #99FFFF !important;} 
-treechildren::-moz-tree-cell-text(lc-33FFFF) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-33FFFF, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-66FFFF,tagsCol) { background-color: #B3FFFF !important;} 
-treechildren::-moz-tree-cell-text(lc-66FFFF) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-66FFFF, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-9999FF,tagsCol) { background-color: #CCCCFF !important;} 
-treechildren::-moz-tree-cell-text(lc-9999FF) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-9999FF, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-FF99FF,tagsCol) { background-color: #FFCCFF !important;} 
-treechildren::-moz-tree-cell-text(lc-FF99FF) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-FF99FF, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-BBBBBB,tagsCol) { background-color: #E0E0E0 !important;} 
-treechildren::-moz-tree-cell-text(lc-BBBBBB) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-BBBBBB, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-FF0000,tagsCol) { background-color: #FF8080 !important;} 
-treechildren::-moz-tree-cell-text(lc-FF0000) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-FF0000, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-FF9900,tagsCol) { background-color: #FFCC80 !important;} 
-treechildren::-moz-tree-cell-text(lc-FF9900) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-FF9900, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-FFCC66,tagsCol) { background-color: #FFE6B3 !important;} 
-treechildren::-moz-tree-cell-text(lc-FFCC66) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-FFCC66, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-FFFF00,tagsCol) { background-color: #FFFF80 !important;} 
-treechildren::-moz-tree-cell-text(lc-FFFF00) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-FFFF00, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-33FF33,tagsCol) { background-color: #99FF99 !important;} 
-treechildren::-moz-tree-cell-text(lc-33FF33) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-33FF33, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-66CCCC,tagsCol) { background-color: #B3E6E6 !important;} 
-treechildren::-moz-tree-cell-text(lc-66CCCC) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-66CCCC, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-33CCFF,tagsCol) { background-color: #99E6FF !important;} 
-treechildren::-moz-tree-cell-text(lc-33CCFF) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-33CCFF, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-6666CC,tagsCol) { background-color: #B3B3E6 !important;} 
-treechildren::-moz-tree-cell-text(lc-6666CC) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-6666CC, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-CC66CC,tagsCol) { background-color: #E6B3E6 !important;} 
-treechildren::-moz-tree-cell-text(lc-CC66CC) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-CC66CC, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-999999,tagsCol) { background-color: #CCCCCC !important;} 
-treechildren::-moz-tree-cell-text(lc-999999) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-999999, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-CC0000,tagsCol) { background-color: #E68080 !important;} 
-treechildren::-moz-tree-cell-text(lc-CC0000) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-CC0000, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-FF6600,tagsCol) { background-color: #FFB380 !important;} 
-treechildren::-moz-tree-cell-text(lc-FF6600) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-FF6600, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-FFCC33,tagsCol) { background-color: #FFE699 !important;} 
-treechildren::-moz-tree-cell-text(lc-FFCC33) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-FFCC33, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-FFCC00,tagsCol) { background-color: #FFE680 !important;} 
-treechildren::-moz-tree-cell-text(lc-FFCC00) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-FFCC00, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-33CC00,tagsCol) { background-color: #99E680 !important;} 
-treechildren::-moz-tree-cell-text(lc-33CC00) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-33CC00, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-00CCCC,tagsCol) { background-color: #80E6E6 !important;} 
-treechildren::-moz-tree-cell-text(lc-00CCCC) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-00CCCC, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-3366FF,tagsCol) { background-color: #99B3FF !important;} 
-treechildren::-moz-tree-cell-text(lc-3366FF) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-3366FF, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-6633FF,tagsCol) { background-color: #B399FF !important;} 
-treechildren::-moz-tree-cell-text(lc-6633FF) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-6633FF, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-CC33CC,tagsCol) { background-color: #E699E6 !important;} 
-treechildren::-moz-tree-cell-text(lc-CC33CC) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-CC33CC, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-666666,tagsCol) { background-color: #B3B3B3 !important;} 
-treechildren::-moz-tree-cell-text(lc-666666) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-666666, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-990000,tagsCol) { background-color: #CC8080 !important;} 
-treechildren::-moz-tree-cell-text(lc-990000) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-990000, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-CC6600,tagsCol) { background-color: #CC8080 !important;} 
-treechildren::-moz-tree-cell-text(lc-CC6600) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-CC6600, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-CC9933,tagsCol) { background-color: #E6CC99 !important;} 
-treechildren::-moz-tree-cell-text(lc-CC9933) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-CC9933, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-999900,tagsCol) { background-color: #CCCC80 !important;} 
-treechildren::-moz-tree-cell-text(lc-999900) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-999900, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-009900,tagsCol) { background-color: #80CC80 !important;} 
-treechildren::-moz-tree-cell-text(lc-009900) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-009900, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-339999,tagsCol) { background-color: #99CCCC !important;} 
-treechildren::-moz-tree-cell-text(lc-339999) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-339999, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-3333FF,tagsCol) { background-color: #9999FF !important;} 
-treechildren::-moz-tree-cell-text(lc-3333FF) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-3333FF, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-6600CC,tagsCol) { background-color: #B380E6 !important;} 
-treechildren::-moz-tree-cell-text(lc-6600CC) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-6600CC, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-993399,tagsCol) { background-color: #CC99CC !important;} 
-treechildren::-moz-tree-cell-text(lc-993399) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-993399, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-333333,tagsCol) { background-color: #999999 !important;} 
-treechildren::-moz-tree-cell-text(lc-333333) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-333333, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-660000,tagsCol) { background-color: #B38080 !important;} 
-treechildren::-moz-tree-cell-text(lc-660000) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-660000, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-993300,tagsCol) { background-color: #CC9980 !important;} 
-treechildren::-moz-tree-cell-text(lc-993300) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-993300, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-996633,tagsCol) { background-color: #CCB399 !important;} 
-treechildren::-moz-tree-cell-text(lc-996633) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-996633, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-666600,tagsCol) { background-color: #B3B380 !important;} 
-treechildren::-moz-tree-cell-text(lc-666600) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-666600, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-006600,tagsCol) { background-color: #80B380 !important;} 
-treechildren::-moz-tree-cell-text(lc-006600) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-006600, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-336666,tagsCol) { background-color: #99B3B3 !important;} 
-treechildren::-moz-tree-cell-text(lc-336666) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-336666, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-000099,tagsCol) { background-color: #8080CC !important;} 
-treechildren::-moz-tree-cell-text(lc-000099) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-000099, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-333399,tagsCol) { background-color: #9999CC !important;} 
-treechildren::-moz-tree-cell-text(lc-333399) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-333399, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-663366,tagsCol) { background-color: #B399B3 !important;} 
-treechildren::-moz-tree-cell-text(lc-663366) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-663366, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-000000,tagsCol) { background-color: #808080 !important;} 
-treechildren::-moz-tree-cell-text(lc-000000) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-000000, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-330000,tagsCol) { background-color: #998080 !important;} 
-treechildren::-moz-tree-cell-text(lc-330000) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-330000, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-663300,tagsCol) { background-color: #B39980 !important;} 
-treechildren::-moz-tree-cell-text(lc-663300) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-663300, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-663333,tagsCol) { background-color: #B39999 !important;} 
-treechildren::-moz-tree-cell-text(lc-663333) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-663333, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-333300,tagsCol) { background-color: #999980 !important;} 
-treechildren::-moz-tree-cell-text(lc-333300) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-333300, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-003300,tagsCol) { background-color: #809980 !important;} 
-treechildren::-moz-tree-cell-text(lc-003300) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-003300, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-003333,tagsCol) { background-color: #809999 !important;} 
-treechildren::-moz-tree-cell-text(lc-003333) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-003333, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-000066,tagsCol) { background-color: #8080B3 !important;} 
-treechildren::-moz-tree-cell-text(lc-000066) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-000066, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-330099,tagsCol) { background-color: #9980CC !important;} 
-treechildren::-moz-tree-cell-text(lc-330099) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-330099, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(lc-330033,tagsCol) { background-color: #998099 !important;} 
-treechildren::-moz-tree-cell-text(lc-330033) { color: #000 !important; } 
-treechildren::-moz-tree-cell-text(lc-330033, selected) { color: #FFF !important; }
-
-treechildren::-moz-tree-cell(tagsCol){margin-top:5px!important; margin-bottom:5px!important; margin-left:3px!important; margin-right:3\px!important;}
 treechildren::-moz-tree-cell-text(unread) {
   font-weight: bold!important;
 }
-treechildren::-moz-tree-cell-text(read)
-{
-opacity:0.8;
+
+treechildren::-moz-tree-cell-text(read) {
+  opacity: 0.8;
 }
 
 treechildren::-moz-tree-cell-text(hasUnread) {
   font-weight: bold!important;
-text-decoration:none!important;
-opacity:1;
+  text-decoration: none!important;
+  opacity: 1;
 }
-
-
-
