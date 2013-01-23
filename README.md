@@ -14,6 +14,6 @@ These CSS files are designed to be used in Thunderbird with the Stylish plugin:
 
 https://addons.mozilla.org/en-us/thunderbird/addon/stylish/
 
-To use, just create a new style with stylish, and add the CSS to it.
+To use, just create a new style with stylish, and add the CSS to it. Repeat this for each of the CSS files in this repo.
 
 
