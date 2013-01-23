@@ -1,105 +1,88 @@
-@-moz-document url(chrome://conversations/content/stub.xhtml)
-{
+@-moz-document url(chrome: //conversations/content/stub.xhtml) {
 
-body {
-font-family:-moz-desktop!important;
-line-height:14px!important;
-background-color:#f5f5f5!important;
-padding: 0 !important;
-}
+  body {
+    font-family: -moz-desktop !important;
+    line-height: 14px !important;
+    background-color: #f5f5f5 !important;
+    padding: 0 !important;
+  }
 
-#messageList {
-}
+  #messageList {
+  }
 
-#conversationHeaderWrapper {
-}
+  #conversationHeaderWrapper {
+  }
 
-.message
-{
-padding: 0 2ex!important;
-box-shadow:none!important;
-border-width: 0 0 1px !important;
-border-radius: 0 !important;
-margin: 0 !important;
-background: white !important;
-}
+  .message {
+    padding: 0 2ex !important;
+    box-shadow: none !important;
+    border-width: 0 0 1px !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    background: white !important;
+  }
 
-.message.collapsed
-{
-border-radius:0px!important;
-border-bottom: 1px solid #ddd!important;
-background: #f9f9f9 !important;
-box-shadow:none;
-}
+  .message.collapsed {
+    border-radius: 0px !important;
+    border-bottom: 1px solid #ddd !important;
+    background: #f9f9f9 !important;
+    box-shadow: none;
+  }
 
-.message.collapsed .messageHeader {
-opacity: 0.5 !important;
+  .message.collapsed .messageHeader {
+    opacity: 0.5 !important;
 
-}
+  }
 
-.message
-{
-margin:0!important;
+  .message {
+    margin: 0 !important;
+    font-family: -moz-desktop !important;
+  }
 
-/*
-max-width:800px!important;
-*/
-font-family: -moz-desktop !important;
-}
+  .message.collapsed .snippet {
+    white-space: nowrap !important;
+    padding-left: 1ex !important;
+    opacity: 0.5;
+  }
 
-.message.collapsed .snippet {
-/*
-display:block!important;
-*/
-white-space: nowrap !important;
-padding-left: 1ex !important;
-opacity: 0.5;
-}
+  .messageHeader {
+    padding: 1em 0.5em 1em 0 !important;
+  }
 
-.messageHeader {
-/*
-padding: 1em 0 1em 1em !important;
-margin: 0 0 0 !important;
-*/
-padding: 1em 0.5em 1em 0 !important;
-}
+  /* FIXME: Not sure what's having the issue here, sadly, so I have to use the star... */
+  .messageHeader * {
+    overflow: visible !important;
+  }
 
-/* FIXME: Not sure what's having the issue here, sadly, so I have to use the star... */
-.messageHeader * {
-overflow: visible !important;
-}
+  .body-container {
+  }
 
-.body-container {
-}
+  .star {
+    margin: 0 1ex 0 1ex !important;
+  }
 
-.star {
-margin:0 1ex 0 1ex !important;
-}
+  .star.starred {
+  }
 
-.star.starred {
-}
+  html[xmlns] {
+  }
 
-html[xmlns] {
-}
+  html {
+  }
 
-html {
-}
+  .bottom-links {
+  }
 
-.bottom-links {
-}
-
-pre
-{
-display:none;
-}
+  pre {
+    display: none;
+  }
 
 
-.iframe-container {
-padding: 1em 18px !important;
-}
+  .iframe-container {
+    padding: 1em 18px !important;
+  }
 
-.body-container {
-}
-
+  .body-container {
+  }
 
 }
